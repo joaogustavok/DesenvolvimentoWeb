@@ -1,0 +1,48 @@
+#site {
+    width: auto;
+    height: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    background-color: antiquewhite;
+}
+
+#header {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(162, 224, 224);
+}
+
+#content {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(214, 229, 192);
+}
+
+#leftcontent {
+    width: 50%;
+    height: 100px;
+    float: left;
+    background-color: red;
+}
+
+#footer {
+    height: 1000px;
+    height: 100px;
+    background-color: rgb(243, 167, 167);
+}
+
+#rightcontent {
+    width: 50%;
+    height: 100px;
+    background-color: aquamarine;
+    float: left;
+}
+
+#newcontent {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    float: left;
+}
