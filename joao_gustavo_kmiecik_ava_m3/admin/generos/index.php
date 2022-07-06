@@ -59,7 +59,7 @@ $generos = $database->read('tb_generos');
                         <td class="actions">
                             <a href="read_genero.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-success">Visualizar</a>
                             <a href="update_genero.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-warning">Editar</a>
-                            <a href="update_genero.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="delete_genero.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

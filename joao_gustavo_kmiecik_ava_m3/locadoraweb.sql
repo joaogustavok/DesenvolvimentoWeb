@@ -14,7 +14,7 @@
 
 
 -- Copiando estrutura do banco de dados para db_locadoraweb
-CREATE DATABASE IF NOT EXISTS `db_locadoraweb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `db_locadoraweb`;
 USE `db_locadoraweb`;
 
 -- Copiando estrutura para tabela db_locadoraweb.tb_cidades
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `tb_cidades` (
   PRIMARY KEY (`id`),
   KEY `FK_tb_cidades_tb_estados` (`id_estado`),
   CONSTRAINT `FK_tb_cidades_tb_estados` FOREIGN KEY (`id_estado`) REFERENCES `tb_estados` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Exportação de dados foi desmarcado.
 
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `tb_clientes` (
   KEY `FK_tb_clientes_tb_estados` (`id_uf`),
   CONSTRAINT `FK_tb_clientes_tb_cidades` FOREIGN KEY (`id_cidade`) REFERENCES `tb_cidades` (`id`),
   CONSTRAINT `FK_tb_clientes_tb_estados` FOREIGN KEY (`id_uf`) REFERENCES `tb_estados` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Exportação de dados foi desmarcado.
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `tb_estados` (
   `sigla` char(2) NOT NULL,
   `regiao` varchar(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Exportação de dados foi desmarcado.
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `tb_filmes` (
   PRIMARY KEY (`id`),
   KEY `FK_tb_filmes_tb_generos` (`id_generos`),
   CONSTRAINT `FK_tb_filmes_tb_generos` FOREIGN KEY (`id_generos`) REFERENCES `tb_generos` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Exportação de dados foi desmarcado.
 
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `tb_funcionarios` (
   KEY `FK_tb_funcionarios_tb_estados` (`id_uf`),
   CONSTRAINT `FK_tb_funcionarios_tb_cidades` FOREIGN KEY (`id_cidade`) REFERENCES `tb_cidades` (`id`),
   CONSTRAINT `FK_tb_funcionarios_tb_estados` FOREIGN KEY (`id_uf`) REFERENCES `tb_estados` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Exportação de dados foi desmarcado.
 
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `tb_generos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Exportação de dados foi desmarcado.
 
