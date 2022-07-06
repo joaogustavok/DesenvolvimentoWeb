@@ -4,11 +4,7 @@ $generos = $database->read('tb_generos');
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     if (isset($_POST) & !empty($_POST)) {
-        $filme['titulo_traduzido'] = $database->sanitize($_POST['titulo_traduzido']);
-        $filme['titulo_original'] = $database->sanitize($_POST['titulo_original']);
-        $filme['duracao'] = $database->sanitize($_POST['duracao']);
-        $filme['valor_locacao'] = $database->sanitize($_POST['valor_locacao']);
-        $filme['id_generos'] = $database->sanitize($_POST['id_generos']);
+        $filme = getFilmes($database);
 
         $res = $database->update('tb_filmes', 'id', $id, $filme);
         if ($res) {
@@ -17,7 +13,7 @@ if (isset($_GET['id'])) {
             echo "failed to insert data";
         }
     } else {
-        $genero = mysqli_fetch_assoc($database->getRegister('tb_filmes', $id));
+        $filme = mysqli_fetch_assoc($database->getRegister('tb_filmes', $id));
     }
 }
 ?>
@@ -56,19 +52,27 @@ if (isset($_GET['id'])) {
                 <div class="form-row justify-content-center align-items-center">
                     <div class="form-group col-md-6">
                         <label for="inputTituloTraduzido">Titulo Traduzido</label>
-                        <input type="text" class="form-control" id="inputTituloTraduzido" name="titulo_traduzido" required>
+                        <input type="text" class="form-control" id="inputTituloTraduzido" name="titulo_traduzido"
+                               value="<?php echo $filme['titulo_traduzido']; ?>"
+                               required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputTituloOriginal">Titulo Original</label>
-                        <input type="text" class="form-control" id="inputTituloOriginal" name="titulo_original" required>
+                        <input type="text" class="form-control" id="inputTituloOriginal" name="titulo_original"
+                               value="<?php echo $filme['titulo_original']; ?>"
+                               required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputDuracao">Duração:</label>
-                        <input type="number" class="form-control" id="inputDuracao" name="duracao" required>
+                        <input type="number" class="form-control" id="inputDuracao" name="duracao"
+                               value="<?php echo $filme['duracao']; ?>"
+                               required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputValor">Valor:</label>
-                        <input type="number" class="form-control" id="inputValor" name="valor_locacao" required>
+                        <input type="number" class="form-control" id="inputValor" name="valor_locacao"
+                               value="<?php echo $filme['valor_locacao']; ?>"
+                               required>
                     </div>
                 </div>
                 <div class="col-md-12">
