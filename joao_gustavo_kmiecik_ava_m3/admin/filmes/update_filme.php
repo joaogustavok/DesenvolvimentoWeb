@@ -4,7 +4,11 @@ $generos = $database->read('tb_generos');
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     if (isset($_POST) & !empty($_POST)) {
-        $filme = getFilmes($database);
+        $filme['titulo_traduzido'] = $database->sanitize($_POST['titulo_traduzido']);
+        $filme['titulo_original'] = $database->sanitize($_POST['titulo_original']);
+        $filme['duracao'] = $database->sanitize($_POST['duracao']);
+        $filme['valor_locacao'] = $database->sanitize($_POST['valor_locacao']);
+        $filme['id_generos'] = $database->sanitize($_POST['id_generos']);
 
         $res = $database->update('tb_filmes', 'id', $id, $filme);
         if ($res) {

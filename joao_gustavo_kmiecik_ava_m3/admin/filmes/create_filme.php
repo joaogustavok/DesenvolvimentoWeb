@@ -1,23 +1,12 @@
 <?php
 require_once('../../database.php');
 $generos = $database->read('tb_generos');
-
-/**
- * @param Database $database
- * @return array
- */
-function getFilmes(Database $database)
-{
+if (isset($_POST) & !empty($_POST)) {
     $filmes['titulo_traduzido'] = $database->sanitize($_POST['titulo_traduzido']);
     $filmes['titulo_original'] = $database->sanitize($_POST['titulo_original']);
     $filmes['duracao'] = $database->sanitize($_POST['duracao']);
     $filmes['valor_locacao'] = $database->sanitize($_POST['valor_locacao']);
     $filmes['id_generos'] = $database->sanitize($_POST['id_generos']);
-    return $filmes;
-}
-
-if (isset($_POST) & !empty($_POST)) {
-    $filmes = getFilmes($database);
 
 
     $res = $database->create('tb_filmes', $filmes);
