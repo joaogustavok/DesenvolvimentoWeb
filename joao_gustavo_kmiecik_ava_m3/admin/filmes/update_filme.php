@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
     <main class="container text-center">
         <br/>
         <hr/>
-        <h1 class="text-center">Atualizar o Serviço</h1>
+        <h1 class="text-center">Atualizar o Filme</h1>
         <hr/>
         <!-- iniciando o formulário -->
         <form action="update_filme.php?id=<?php echo $filme['id']; ?>" id="formAlterarFilme" method="post"

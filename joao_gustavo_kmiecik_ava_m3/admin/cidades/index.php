@@ -33,7 +33,7 @@ $cidades = $database->read('tb_cidades');
                 <h2>Cidades</h2>
             </div>
             <div class="col-sm-6 text-right h2">
-                <a class="btn btn-info" href="create_cidade.php"><i class="fa fa-plus"></i>Novo Estado</a>
+                <a class="btn btn-info" href="create_cidade.php"><i class="fa fa-plus"></i>Nova Cidade</a>
                 <a class="btn btn-secondary" href="index.php"><i class="fa fa-refresh"></i>Atualizar</a>
             </div>
         </div>

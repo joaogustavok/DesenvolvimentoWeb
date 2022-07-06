@@ -44,7 +44,7 @@ if (isset($_POST) & !empty($_POST)) {
         <h1 class="text-center">Cadastrar Novo Cidade</h1>
         <hr/>
         <!-- iniciando o formulário -->
-        <form action="create_estado.php" id="formCadastroFilme" method="post" class="needs-validation" novalidate>
+        <form action="create_cidade.php" id="formCadastroFilme" method="post" class="needs-validation" novalidate>
             <div class="container">
                 <div class="col-md-12">
                     <div class="form-row justify-content-center align-items-center">
