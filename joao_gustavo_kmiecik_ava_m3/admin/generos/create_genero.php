@@ -38,7 +38,7 @@ if (isset($_POST) & !empty($_POST)) {
     <main class="container text-center">
         <br/>
         <hr/>
-        <h1 class="text-center">Cadastrar Nbovo Gênero</h1>
+        <h1 class="text-center">Cadastrar Novo Gênero</h1>
         <hr/>
         <!-- iniciando o formulário -->
         <form action="create_genero.php" id="formCadastroGenero" method="post" class="needs-validation" novalidate>
