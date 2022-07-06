@@ -6,7 +6,7 @@ if (isset($_POST) & !empty($_POST)) {
     $cidades['abreviatura'] = $database->sanitize($_POST['abreviatura']);
     $cidades['id_estado'] = $database->sanitize($_POST['id_estado']);
 
-    $res = $database->create('tb_estados', $cidades);
+    $res = $database->create('tb_cidades', $cidades);
     if ($res) {
         header('location: index.php');
         //echo "Successfully inserted data";
@@ -41,7 +41,7 @@ if (isset($_POST) & !empty($_POST)) {
     <main class="container text-center">
         <br/>
         <hr/>
-        <h1 class="text-center">Cadastrar Novo Cidade</h1>
+        <h1 class="text-center">Cadastrar Nova Cidade</h1>
         <hr/>
         <!-- iniciando o formulário -->
         <form action="create_cidade.php" id="formCadastroFilme" method="post" class="needs-validation" novalidate>
