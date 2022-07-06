@@ -33,7 +33,7 @@ $generos = $database->read('tb_generos');
                 <h2>Gêneros</h2>
             </div>
             <div class="col-sm-6 text-right h2">
-                <a class="btn btn-info" href=""><i class="fa fa-plus"></i>Novo Gênero</a>
+                <a class="btn btn-info" href="create_genero.php"><i class="fa fa-plus"></i>Novo Gênero</a>
                 <a class="btn btn-secondary" href="index.php"><i class="fa fa-refresh"></i>Atualizar</a>
             </div>
         </div>
@@ -58,15 +58,15 @@ $generos = $database->read('tb_generos');
                         <td><?php echo $genero['nome'] ?></td>
                         <td class="actions">
                             <a href="read_genero.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-success">Visualizar</a>
-                            <a href="update_servico.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-warning">Editar</a>
-                            <a href="delete_servico.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="update_genero.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="update_genero.php?id=<?php echo $genero['id']; ?>" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
             </tbody>
         </table>
-        <hr />
+        <hr/>
     </main>
 </div>
 
