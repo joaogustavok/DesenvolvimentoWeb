@@ -54,15 +54,21 @@ if (isset($_GET['id'])) {
                     <div class="form-row justify-content-center align-items-center">
                         <div class="form-group col-md-6">
                             <label for="inputNome">NomeL>:</label>
-                            <input type="text" class="form-control" id="inputNome" name="nome" required>
+                            <input type="text" class="form-control" id="inputNome" name="nome"
+                                   value="<?php echo $estado['nome']; ?>"
+                                   required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputSigla">Sigla:</label>
-                            <input type="text" class="form-control" id="inputSigla" name="sigla" required>
+                            <input type="text" class="form-control" id="inputSigla" name="sigla"
+                                   value="<?php echo $estado['sigla']; ?>"
+                                   required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputDuracao">Região:</label>
-                            <input type="number" class="form-control" id="inputDuracao" name="regiao" required>
+                            <input type="text" class="form-control" id="inputDuracao" name="regiao"
+                                   value="<?php echo $estado['regiao']; ?>"
+                                   required>
                         </div>
                     </div>
                 </div>

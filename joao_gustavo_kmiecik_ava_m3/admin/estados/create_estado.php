@@ -48,7 +48,7 @@ if (isset($_POST) & !empty($_POST)) {
                 <div class="col-md-12">
                     <div class="form-row justify-content-center align-items-center">
                         <div class="form-group col-md-6">
-                            <label for="inputNome">NomeL>:</label>
+                            <label for="inputNome">Nome:</label>
                             <input type="text" class="form-control" id="inputNome" name="nome" required>
                         </div>
                         <div class="form-group col-md-6">
@@ -57,7 +57,7 @@ if (isset($_POST) & !empty($_POST)) {
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputDuracao">Região:</label>
-                            <input type="number" class="form-control" id="inputDuracao" name="regiao" required>
+                            <input type="text" class="form-control" id="inputDuracao" name="regiao" required>
                         </div>
                     </div>
                 </div>
