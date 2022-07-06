@@ -30,7 +30,7 @@ $filmes = $database->read('tb_filmes');
         <br />
         <div class="row">
             <div class="col-sm-6">
-                <h2>Gêneros</h2>
+                <h2>Filmes</h2>
             </div>
             <div class="col-sm-6 text-right h2">
                 <a class="btn btn-info" href="create_filme.php"><i class="fa fa-plus"></i>Novo Filme</a>
