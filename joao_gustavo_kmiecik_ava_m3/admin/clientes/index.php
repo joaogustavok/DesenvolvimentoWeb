@@ -1,6 +1,6 @@
 <?php
 require_once('../../database.php');
-$clientes = $database->read('tb_estados');
+$clientes = $database->read('tb_clientes');
 ?>
 
 <!DOCTYPE html>

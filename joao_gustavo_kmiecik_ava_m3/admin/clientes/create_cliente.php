@@ -1,7 +1,7 @@
 <?php
+require_once('../../database.php');
 $cidades = $database->read('tb_cidades');
 $estados = $database->read('tb_estados');
-require_once('../../database.php');
 if (isset($_POST) & !empty($_POST)) {
     $clientes['nome'] = $database->sanitize($_POST['nome']);
     $clientes['nascimento'] = $database->sanitize($_POST['nascimento']);
