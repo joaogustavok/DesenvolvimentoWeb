@@ -72,7 +72,6 @@ if (isset($_POST) & !empty($_POST)) {
                         <div class="form-row justify-content-center align-items-center">
                             <div class="form-group col-md-6">
                                 <label for="id_generos" data-error="wrong" data-succes="right">Gênero</label>
-                                <label>
                                     <select class="form-select" name="id_generos">
                                         <?php if ($generos) : ?>
                                             <?php foreach ($generos as $genero) : ?>
@@ -84,7 +83,6 @@ if (isset($_POST) & !empty($_POST)) {
                                             <option>Não foi possível obter os dados do banco!</option>
                                         <?php endif; ?>
                                     </select>
-                                </label>
                             </div>
                         </div>
                     </div>

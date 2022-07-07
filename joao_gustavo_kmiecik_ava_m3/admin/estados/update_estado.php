@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
         <h1 class="text-center">Atualizar o Estado</h1>
         <hr/>
         <!-- iniciando o formulário -->
-        <form action="update_estado.php?id=<?php echo $estado['id']; ?>" id="formAlterarFilme" method="post"
+        <form action="update_estado.php?id=<?php echo $estado['id']; ?>" id="formAlterarEstado" method="post"
         <div class="container">
             <div class="col-md-12">
                 <div class="form-row justify-content-center align-items-center">
