@@ -1,6 +1,6 @@
 <?php
 require_once('../../database.php');
-$clientes = $database->read('funcionarios');
+$funcionarios = $database->read('tb_funcionarios');
 ?>
 
 <!DOCTYPE html>
@@ -48,40 +48,34 @@ $clientes = $database->read('funcionarios');
                 <th>Nascimento</th>
                 <th>Gênero</th>
                 <th>Estado Civil</th>
-                <th>Telefone</th>
                 <th>Celular</th>
                 <th>Email</th>
-                <th>Rua</th>
-                <th>Número</th>
-                <th>Complemento</th>
-                <th>Bairro</th>
-                <th>Cep</th>
+                <th>Data Admissão</th>
+                <th>Cargo</th>
+                <th>Salario</th>
                 <th>Cidade</th>
                 <th>Estado</th>
                 <th style="text-align:center">Opções</th>
             </tr>
             </thead>
             <tbody>
-            <?php if (empty($clientes)) : ?>
+            <?php if (empty($funcionarios)) : ?>
                 <tr>
                     <td colspan="4">Nenhum registro encontrado!</td>
                 </tr>
             <?php else : ?>
-                <?php foreach ($clientes as $cliente) : ?>
+                <?php foreach ($funcionarios as $cliente) : ?>
                     <tr>
                         <td><?php echo $cliente['id'] ?></td>
                         <td><?php echo $cliente['nome'] ?></td>
                         <td><?php echo $cliente['nascimento'] ?></td>
                         <td><?php echo $cliente['genero'] ?></td>
                         <td><?php echo $cliente['estadocivil'] ?></td>
-                        <td><?php echo $cliente['fone'] ?></td>
                         <td><?php echo $cliente['cel'] ?></td>
                         <td><?php echo $cliente['email'] ?></td>
-                        <td><?php echo $cliente['rua'] ?></td>
-                        <td><?php echo $cliente['num'] ?></td>
-                        <td><?php echo $cliente['comp'] ?></td>
-                        <td><?php echo $cliente['bairro'] ?></td>
-                        <td><?php echo $cliente['cep'] ?></td>
+                        <td><?php echo $cliente['dataadmissao'] ?></td>
+                        <td><?php echo $cliente['cargo'] ?></td>
+                        <td><?php echo $cliente['salario'] ?></td>
                         <td><?php echo $cliente['id_cidade'] ?></td>
                         <td><?php echo $cliente['id_uf'] ?></td>
 
