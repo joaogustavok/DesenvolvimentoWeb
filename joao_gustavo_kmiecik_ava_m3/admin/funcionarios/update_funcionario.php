@@ -5,29 +5,26 @@ $cidades = $database->read('tb_cidades');
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     if (isset($_POST) & !empty($_POST)) {
-        $cliente['nome'] = $database->sanitize($_POST['nome']);
-        $cliente['nascimento'] = $database->sanitize($_POST['nascimento']);
-        $cliente['genero'] = $database->sanitize($_POST['genero']);
-        $cliente['estadocivil'] = $database->sanitize($_POST['estadocivil']);
-        $cliente['fone'] = $database->sanitize($_POST['fone']);
-        $cliente['cel'] = $database->sanitize($_POST['cel']);
-        $cliente['email'] = $database->sanitize($_POST['email']);
-        $cliente['rua'] = $database->sanitize($_POST['rua']);
-        $cliente['num'] = $database->sanitize($_POST['num']);
-        $cliente['comp'] = $database->sanitize($_POST['comp']);
-        $cliente['bairro'] = $database->sanitize($_POST['bairro']);
-        $cliente['cep'] = $database->sanitize($_POST['cep']);
-        $cliente['id_cidade'] = $database->sanitize($_POST['id_cidade']);
-        $cliente['id_uf'] = $database->sanitize($_POST['id_uf']);
+        $funcionarios['nome'] = $database->sanitize($_POST['nome']);
+        $funcionarios['nascimento'] = $database->sanitize($_POST['nascimento']);
+        $funcionarios['genero'] = $database->sanitize($_POST['genero']);
+        $funcionarios['estadocivil'] = $database->sanitize($_POST['estadocivil']);
+        $funcionarios['cel'] = $database->sanitize($_POST['cel']);
+        $funcionarios['email'] = $database->sanitize($_POST['email']);
+        $funcionarios['dataadmissao'] = $database->sanitize($_POST['dataadmissao']);
+        $funcionarios['cargo'] = $database->sanitize($_POST['cargo']);
+        $funcionarios['salario'] = $database->sanitize($_POST['salario']);
+        $funcionarios['id_cidade'] = $database->sanitize($_POST['id_cidade']);
+        $funcionarios['id_uf'] = $database->sanitize($_POST['id_uf']);
 
-        $res = $database->update('tb_clientes', 'id', $id, $cliente);
+        $res = $database->update('tb_funcionarios', 'id', $id, $funcionarios);
         if ($res) {
             header('location: index.php');
         } else {
             echo "failed to insert data";
         }
     } else {
-        $cliente = mysqli_fetch_assoc($database->getRegister('tb_clientes', $id));
+        $funcionario = mysqli_fetch_assoc($database->getRegister('tb_funcionarios', $id));
     }
 }
 ?>
@@ -57,80 +54,64 @@ if (isset($_GET['id'])) {
     <main class="container text-center">
         <br/>
         <hr/>
-        <h1 class="text-center">Atualizar o cliente</h1>
+        <h1 class="text-center">Atualizar a Cidade</h1>
         <hr/>
         <!-- iniciando o formulário -->
-        <form action="update_cliente.php?id=<?php echo $cliente['id']; ?>" id="formAlterarCliente" method="post"
+        <form action="update_funcionario.php?id=<?php echo $funcionario['id']; ?>" id="formAlterarfuncionario"
+              method="post"
         <div class="container">
             <div class="col-md-12">
                 <div class="form-row justify-content-center align-items-center">
                     <div class="form-group col-md-6">
                         <label for="inputNome">Nome:</label>
                         <input type="text" class="form-control" id="inputNome" name="nome"
-                               value="<?php echo $cliente['nome']; ?>"
+                               value="<?php echo $funcionario['nome']; ?>"
                                required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputNascimento">Data Nascimento:</label>
                         <input type="date" class="form-control" id="inputNascimento" name="nascimento"
-                               value="<?php echo $cliente['nascimento']; ?>"
+                               value="<?php echo $funcionario['nascimento']; ?>"
                                required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputGenero">Genero:</label>
                         <input type="text" class="form-control" id="inputGenero" name="genero"
-                               value="<?php echo $cliente['genero']; ?>"
+                               value="<?php echo $funcionario['genero']; ?>"
                                required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputEstadoCivil">Estado Civil:</label>
                         <input type="text" class="form-control" id="inputEstadoCivil" name="estadocivil"
-                               value="<?php echo $cliente['estadocivil']; ?>"
+                               value="<?php echo $funcionario['estadocivil']; ?>"
                                required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputFone">Telefone:</label>
-                        <input type="text" class="form-control" id="inputFone" name="fone"
-                               value="<?php echo $cliente['fone']; ?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputCel">Celular:</label>
                         <input type="text" class="form-control" id="inputCel" name="cel"
-                               value="<?php echo $cliente['cel']; ?>">
+                               value="<?php echo $funcionario['cel']; ?>">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputEmail">Email:</label>
                         <input type="email" class="form-control" id="inputEmail" name="email"
-                               value="<?php echo $cliente['email']; ?>">
+                               value="<?php echo $funcionario['email']; ?>">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputRua">Rua:</label>
-                        <input type="text" class="form-control" id="inputRua" name="rua"
-                               value="<?php echo $cliente['rua']; ?>"
+                        <label for="inputDataadmissao">Data Admissão:</label>
+                        <input type="date" class="form-control" id="inputDataadmissao" name="dataadmissao"
+                               value="<?php echo $funcionario['dataadmissao']; ?>"
                                required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputNum">Numero:</label>
-                        <input type="number" class="form-control" id="inputNum" name="num"
-                               value="<?php echo $cliente['num']; ?>"
+                        <label for="inputCargo">Cargo:</label>
+                        <input type="text" class="form-control" id="inputCargo" name="cargo"
+                               value="<?php echo $funcionario['cargo']; ?>"
                                required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputComp">Complemento:</label>
-                        <input type="text" class="form-control" id="inputComp" name="comp"
-                               value="<?php echo $cliente['comp']; ?>"
-                        >
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputBairro">Bairro:</label>
-                        <input type="text" class="form-control" id="inputBairro" name="bairro"
-                               value="<?php echo $cliente['bairro']; ?>"
-                               required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputCep">Cep:</label>
-                        <input type="text" class="form-control" id="inputCep" name="cep"
-                               value="<?php echo $cliente['cep']; ?>"
+                        <label for="inputSalario">Salario:</label>
+                        <input type="number" class="form-control" id="inputSalario" name="salario"
+                               value="<?php echo $funcionario['salario']; ?>"
                                required>
                     </div>
                     <div class="form-group col-md-6">

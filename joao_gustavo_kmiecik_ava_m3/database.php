@@ -21,7 +21,7 @@ class Database
             'root',
             '',
             'db_locadoraweb',
-            3307
+            3306
         );
         // testando se ocorreu um erro na conexão
         if (mysqli_connect_error()) {

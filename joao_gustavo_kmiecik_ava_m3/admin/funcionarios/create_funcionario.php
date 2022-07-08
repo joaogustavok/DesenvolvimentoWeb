@@ -3,22 +3,19 @@ require_once('../../database.php');
 $cidades = $database->read('tb_cidades');
 $estados = $database->read('tb_estados');
 if (isset($_POST) & !empty($_POST)) {
-    $clientes['nome'] = $database->sanitize($_POST['nome']);
-    $clientes['nascimento'] = $database->sanitize($_POST['nascimento']);
-    $clientes['genero'] = $database->sanitize($_POST['genero']);
-    $clientes['estadocivil'] = $database->sanitize($_POST['estadocivil']);
-    $clientes['fone'] = $database->sanitize($_POST['fone']);
-    $clientes['cel'] = $database->sanitize($_POST['cel']);
-    $clientes['email'] = $database->sanitize($_POST['email']);
-    $clientes['rua'] = $database->sanitize($_POST['rua']);
-    $clientes['num'] = $database->sanitize($_POST['num']);
-    $clientes['comp'] = $database->sanitize($_POST['comp']);
-    $clientes['bairro'] = $database->sanitize($_POST['bairro']);
-    $clientes['cep'] = $database->sanitize($_POST['cep']);
-    $clientes['id_cidade'] = $database->sanitize($_POST['id_cidade']);
-    $clientes['id_uf'] = $database->sanitize($_POST['id_uf']);
+    $funcionarios['nome'] = $database->sanitize($_POST['nome']);
+    $funcionarios['nascimento'] = $database->sanitize($_POST['nascimento']);
+    $funcionarios['genero'] = $database->sanitize($_POST['genero']);
+    $funcionarios['estadocivil'] = $database->sanitize($_POST['estadocivil']);
+    $funcionarios['cel'] = $database->sanitize($_POST['cel']);
+    $funcionarios['email'] = $database->sanitize($_POST['email']);
+    $funcionarios['dataadmissao'] = $database->sanitize($_POST['dataadmissao']);
+    $funcionarios['cargo'] = $database->sanitize($_POST['cargo']);
+    $funcionarios['salario'] = $database->sanitize($_POST['salario']);
+    $funcionarios['id_cidade'] = $database->sanitize($_POST['id_cidade']);
+    $funcionarios['id_uf'] = $database->sanitize($_POST['id_uf']);
 
-    $res = $database->create('tb_clientes', $clientes);
+    $res = $database->create('tb_funcionarios', $funcionarios);
     if ($res) {
         header('location: index.php');
         //echo "Successfully inserted data";
@@ -53,10 +50,11 @@ if (isset($_POST) & !empty($_POST)) {
     <main class="container text-center">
         <br/>
         <hr/>
-        <h1 class="text-center">Cadastrar Novo Cliente</h1>
+        <h1 class="text-center">Cadastrar Novo Funcionario</h1>
         <hr/>
         <!-- iniciando o formulário -->
-        <form action="create_cliente.php" id="formCadastroCliente" method="post" class="needs-validation" novalidate>
+        <form action="create_funcionario.php" id="formCadastrofuncionario" method="post" class="needs-validation"
+              novalidate>
             <div class="container">
                 <div class="col-md-12">
                     <div class="form-row justify-content-center align-items-center">
@@ -77,10 +75,6 @@ if (isset($_POST) & !empty($_POST)) {
                             <input type="text" class="form-control" id="inputEstadoCivil" name="estadocivil" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputFone">Telefone:</label>
-                            <input type="text" class="form-control" id="inputFone" name="fone">
-                        </div>
-                        <div class="form-group col-md-6">
                             <label for="inputCel">Celular:</label>
                             <input type="text" class="form-control" id="inputCel" name="cel">
                         </div>
@@ -89,24 +83,16 @@ if (isset($_POST) & !empty($_POST)) {
                             <input type="email" class="form-control" id="inputEmail" name="email">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputRua">Rua:</label>
-                            <input type="text" class="form-control" id="inputRua" name="rua" required>
+                            <label for="inputDataadmissao">Data Admissão:</label>
+                            <input type="date" class="form-control" id="inputDataadmissao" name="dataadmissao" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputNum">Numero:</label>
-                            <input type="number" class="form-control" id="inputNum" name="num" required>
+                            <label for="inputCargo">Cargo:</label>
+                            <input type="text" class="form-control" id="inputCargo" name="cargo">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputComp">Complemento:</label>
-                            <input type="text" class="form-control" id="inputComp" name="comp">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputBairro">Bairro:</label>
-                            <input type="text" class="form-control" id="inputBairro" name="bairro" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputCep">Cep:</label>
-                            <input type="text" class="form-control" id="inputCep" name="cep" required>
+                            <label for="inputSalario">Salario:</label>
+                            <input type="number" class="form-control" id="inputSalario" name="salario" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="id_cidade" data-error="wrong" data-succes="right">Cidade:</label>

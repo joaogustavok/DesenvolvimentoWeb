@@ -32,10 +32,10 @@ $funcionarios = $database->read('tb_funcionarios');
         <br/>
         <div class="row">
             <div class="col-sm-6">
-                <h2>Clientes</h2>
+                <h2>Funcionarios</h2>
             </div>
             <div class="col-sm-6 text-right h2">
-                <a class="btn btn-info" href="create_cliente.php"><i class="fa fa-plus"></i>Novo Cliente</a>
+                <a class="btn btn-info" href="create_funcionario.php"><i class="fa fa-plus"></i>Novo Funcionario</a>
                 <a class="btn btn-secondary" href="index.php"><i class="fa fa-refresh"></i>Atualizar</a>
             </div>
         </div>
@@ -64,26 +64,26 @@ $funcionarios = $database->read('tb_funcionarios');
                     <td colspan="4">Nenhum registro encontrado!</td>
                 </tr>
             <?php else : ?>
-                <?php foreach ($funcionarios as $cliente) : ?>
+                <?php foreach ($funcionarios as $funcionario) : ?>
                     <tr>
-                        <td><?php echo $cliente['id'] ?></td>
-                        <td><?php echo $cliente['nome'] ?></td>
-                        <td><?php echo $cliente['nascimento'] ?></td>
-                        <td><?php echo $cliente['genero'] ?></td>
-                        <td><?php echo $cliente['estadocivil'] ?></td>
-                        <td><?php echo $cliente['cel'] ?></td>
-                        <td><?php echo $cliente['email'] ?></td>
-                        <td><?php echo $cliente['dataadmissao'] ?></td>
-                        <td><?php echo $cliente['cargo'] ?></td>
-                        <td><?php echo $cliente['salario'] ?></td>
-                        <td><?php echo $cliente['id_cidade'] ?></td>
-                        <td><?php echo $cliente['id_uf'] ?></td>
+                        <td><?php echo $funcionario['id'] ?></td>
+                        <td><?php echo $funcionario['nome'] ?></td>
+                        <td><?php echo $funcionario['nascimento'] ?></td>
+                        <td><?php echo $funcionario['genero'] ?></td>
+                        <td><?php echo $funcionario['estadocivil'] ?></td>
+                        <td><?php echo $funcionario['cel'] ?></td>
+                        <td><?php echo $funcionario['email'] ?></td>
+                        <td><?php echo $funcionario['dataadmissao'] ?></td>
+                        <td><?php echo $funcionario['cargo'] ?></td>
+                        <td><?php echo $funcionario['salario'] ?></td>
+                        <td><?php echo $funcionario['id_cidade'] ?></td>
+                        <td><?php echo $funcionario['id_uf'] ?></td>
 
                         <td class="actions">
-                            <a href="read_cliente.php?id=<?php echo $cliente['id']; ?>" class="btn btn-sm btn-success">Visualizar</a>
-                            <a href="update_cliente.php?id=<?php echo $cliente['id']; ?>"
+                            <a href="read_funcionario.php?id=<?php echo $funcionario['id']; ?>" class="btn btn-sm btn-success">Visualizar</a>
+                            <a href="update_funcionario.php?id=<?php echo $funcionario['id']; ?>"
                                class="btn btn-sm btn-warning">Editar</a>
-                            <a href="delete_cliente.php?id=<?php echo $cliente['id']; ?>" class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="delete_funcionario.php?id=<?php echo $funcionario['id']; ?>" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
