@@ -33,22 +33,22 @@ $filmes = $database->read('tb_filmes');
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../filmes/index.php">Filmes</a>
+                    <a class="nav-link" aria-current="page" href="../filmes/index.php">Filmes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../generos/index.php">Gêneros</a>
+                    <a class="nav-link" aria-current="page" href="../generos/index.php">Gêneros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../clientes/index.php">Clientes</a>
+                    <a class="nav-link" aria-current="page" href="../clientes/index.php">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../funcionarios/index.php">Funcionarios</a>
+                    <a class="nav-link" aria-current="page" href="../funcionarios/index.php">Funcionarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../cidades/index.php">Cidades</a>
+                    <a class="nav-link" aria-current="page" href="../cidades/index.php">Cidades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../estados/index.php">Estados</a>
+                    <a class="nav-link" aria-current="page" href="../estados/index.php">Estados</a>
                 </li>
             </ul>
         </div>
